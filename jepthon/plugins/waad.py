@@ -1,19 +1,20 @@
-from ..core.session import jepiq as huks
+from ..core.session import jepiq
 import asyncio
-@huks.on(admin_cmd(pattern=r"\.بخ رعد (.*)"))
+import telethon
+@jepiq.on(admin_cmd(pattern="\.بخ وعد (.*)"))
 async def _(event):
     for i in range(int("".join(event.text.split(maxsplit=2)[2:]).split(" ", 2)[0])):
         chat = event.chat_id
         await huks.send_message(chat,'بخشيش')
         await asyncio.sleep(605)
-@huks.on(admin_cmd(pattern=r"\.ر وعد (.*)"))
+@jepiq.on(admin_cmd(pattern="\.ر وعد (.*)"))
 async def _(event):
     for i in range(int("".join(event.text.split(maxsplit=2)[2:]).split(" ", 2)[0])):
         chat = event.chat_id
         await huks.send_message(chat,'راتب')
         await asyncio.sleep(605)
         
-@huks.on(admin_cmd(pattern=r"\.اس وعد (.*)"))
+@jepiq.on(admin_cmd(pattern="\.اس وعد (.*)"))
 async def _(event):
         for i in range(int("".join(event.text.split(maxsplit=2)[2:]).split(" ", 2)[0])):
             
